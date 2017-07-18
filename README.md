@@ -3,4 +3,5 @@
 
 <hr></hr>
 
-* SpringNettyExample —— 利用Netty实现TCP/IP的服务器
+* SpringNettyExample 		—— 利用Netty实现TCP/IP的服务器
+* SpringRabbitMQExample 	—— 利用RabbitMQ实现消息队列
