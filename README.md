@@ -7,3 +7,4 @@
 * SpringMinaExample			—— 利用Apache mina实现TCP/IP的服务器
 * SpringRabbitMQExample 	—— 利用RabbitMQ实现消息队列
 * RedisMessageExample		—— 利用Redis实现消息队列
+* ReadWriteExample			—— MyBatis读写分离支持事务
