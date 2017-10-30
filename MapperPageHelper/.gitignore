@@ -31,3 +31,4 @@ nbdist/
 /gradlew.bat
 /gradle/
 /out
+/logs/
