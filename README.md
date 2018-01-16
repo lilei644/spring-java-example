@@ -9,3 +9,4 @@
 * RedisMessageExample		—— 利用Redis实现消息队列
 * ReadWriteExample			—— MyBatis读写分离支持事务
 * MapeerPageHelper			—— MyBatis通用Mapper,分页插件
+* WebSocketExample			—— WebSocekt通讯
