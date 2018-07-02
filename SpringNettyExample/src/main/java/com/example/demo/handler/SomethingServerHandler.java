@@ -48,18 +48,8 @@ public class SomethingServerHandler extends ChannelInboundHandlerAdapter {
 
         String stringMessage = (String) msg;
 
-        logger.info(stringMessage);
-
-        String[] splitMessage = stringMessage.split("::");
-
-        if ( splitMessage.length != 2 ) {
-            ctx.channel().writeAndFlush(stringMessage); // \r\n
-            return;
-        }
-
-        if ( channelRepository.get(splitMessage[0]) != null ) {
-            channelRepository.get(splitMessage[0]).writeAndFlush(splitMessage[1]);
-        }
+    //    ctx.channel().writeAndFlush(stringMessage); // \r\n
+        WorkThread.startWork(ctx, stringMessage);
     }
 
     @Override
