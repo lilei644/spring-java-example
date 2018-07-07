@@ -8,7 +8,6 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
-
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -16,6 +15,7 @@ import java.util.concurrent.CountDownLatch;
  */
 @Configuration
 public class RedisConfig {
+
     /**
      * 订阅的频道
      */
@@ -52,6 +52,7 @@ public class RedisConfig {
     MessageListenerAdapter listenerAdapter(RedisMessageReceiver receiver) {
         return new MessageListenerAdapter(receiver, RedisMessageReceiver.DEFAULT_LISTENEER_METHOD);
     }
+
     /**
      * 消息消费主体
      */
@@ -63,7 +64,6 @@ public class RedisConfig {
         container.addMessageListener(listenerAdapter, new PatternTopic(channel));
         return container;
     }
-
 
 
 }

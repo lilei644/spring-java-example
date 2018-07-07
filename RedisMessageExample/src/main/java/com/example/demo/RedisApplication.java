@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +15,9 @@ public class RedisApplication {
 
 	@Autowired
 	private StringRedisTemplate redisTemplate;
+
+	@Autowired
+	private RedisService redisService;
 
 	public static void main(String[] args) throws InterruptedException {
 
@@ -32,4 +36,16 @@ public class RedisApplication {
 		redisTemplate.convertAndSend("task_message", "Hello from Redis!");
 		return "Hello World";
 	}
+
+
+	@GetMapping("/test")
+	public String testRedis2() throws InterruptedException {
+	//	redisService.save("name1", "lilei");
+	//	System.out.println(redisService.setNxEx("name5", "kang", 10000));
+		System.out.println(redisService.unLock("name4", "3333"));
+		return redisService.keys("name*").toString();
+	}
+
+
+
 }
