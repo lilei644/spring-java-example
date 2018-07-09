@@ -7,7 +7,7 @@ import org.apache.curator.retry.ExponentialBackoffRetry;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * zookeeper实现分布式锁
+ * zookeeper实现分布式锁，可以开两个进程运行，模拟分布式
  */
 public class ZookeeperLock implements Runnable {
 
@@ -20,6 +20,9 @@ public class ZookeeperLock implements Runnable {
     public void run() {
         try {
             countDownLatch.await();
+
+            // 休眠随机数，制造进程之间同的抢锁顺序
+            Thread.sleep((long) (Math.random() * 5000));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -32,6 +35,7 @@ public class ZookeeperLock implements Runnable {
             // 处理逻辑
             count++;
             System.out.println(count);
+            Thread.sleep(1000);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -68,6 +72,7 @@ public class ZookeeperLock implements Runnable {
         }
 
         Thread.sleep(1000);
+        System.out.println(">>>>开始线程调用");
         countDownLatch.countDown();
 
 
@@ -75,6 +80,7 @@ public class ZookeeperLock implements Runnable {
         for (int i = 0; i < 10; i++) {
             threads[i].join();
         }
+        System.out.println(">>>>结束线程调用");
         curatorFramework.close();
 
     }
