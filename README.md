@@ -11,3 +11,4 @@
 * MapeerPageHelper			—— MyBatis通用Mapper,分页插件
 * WebSocketExample			—— WebSocekt通讯
 * ZookeeperExample			—— Zookeeper使用和分布式锁的实现
+* DubboExample				—— 利用Dubbo实现RPC服务调用
