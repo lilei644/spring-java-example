@@ -6,6 +6,7 @@
 * SpringNettyExample 		—— 利用Netty实现TCP/IP的服务器
 * SpringMinaExample			—— 利用Apache mina实现TCP/IP的服务器
 * SpringRabbitMQExample 	—— 利用RabbitMQ实现消息队列
+* JavaRabbitmqExample		—— Java版rabbitmq消息队列示例
 * RedisMessageExample		—— 利用Redis实现消息队列和分布式锁
 * ReadWriteExample			—— MyBatis读写分离支持事务
 * MapeerPageHelper			—— MyBatis通用Mapper,分页插件
