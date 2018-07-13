@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RabbitmqApplication {
 
+	public static final String MESSAGE_QUENE = "TestQueue2";
+	public final static String EXCHANGE_NAME = "TestExchange";
+
 	@Autowired
 	private Sender sender;
 
@@ -20,7 +23,7 @@ public class RabbitmqApplication {
 
 
 	@GetMapping("/Main")
-	public String main() {
+	public String main() throws InterruptedException  {
 		sender.send();
 		return "hello world";
 	}
