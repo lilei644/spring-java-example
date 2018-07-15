@@ -11,10 +11,10 @@ public class KafkaExample {
         SendMessage sendMessage = new SendMessage();
         sendMessage.startConnect();
 
-//        ReceiveMessage receiveMessage = new ReceiveMessage();
-//        receiveMessage.startConnect();
-//        // 接收消息
-//        receiveMessage.receiveMessage();
+        ReceiveMessage receiveMessage = new ReceiveMessage();
+        receiveMessage.startConnect();
+        // 接收消息
+        receiveMessage.receiveMessage();
 
 
         for (int i = 0; i < 100; i++) {

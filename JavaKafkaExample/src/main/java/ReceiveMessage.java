@@ -23,7 +23,7 @@ public class ReceiveMessage {
         props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000");
         props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "30000");
 //        props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 1000);
-        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
+//        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         consumer = new KafkaConsumer<String, String>(props);
@@ -33,7 +33,7 @@ public class ReceiveMessage {
     public void receiveMessage() {
 
         while (true) {
-            ConsumerRecords<String, String> msgList=consumer.poll(1000);
+            ConsumerRecords<String, String> msgList = consumer.poll(1000);
             for (ConsumerRecord<String, String> consumerRecord : msgList) {
                 System.out.println("receive message : " + consumerRecord.toString());
             }
