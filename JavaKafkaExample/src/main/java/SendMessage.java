@@ -1,6 +1,7 @@
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
 
+import java.util.Date;
 import java.util.Properties;
 
 /**
@@ -8,6 +9,7 @@ import java.util.Properties;
  */
 public class SendMessage {
 
+    public final static String TOPIC = "TestTopic";
     private KafkaProducer<String, String> producer;
 
     public void startConnect() {
@@ -22,7 +24,7 @@ public class SendMessage {
     }
 
     public void sendMessage(String message) {
-        producer.send(new ProducerRecord<String, String>(KafkaExample.TOPIC, "MessageKey", message),
+        producer.send(new ProducerRecord<String, String>(TOPIC, "MessageKey", message),
                 new Callback() {
                     public void onCompletion(RecordMetadata recordMetadata, Exception e) {
                         if (e != null) {
@@ -37,6 +39,17 @@ public class SendMessage {
 
     public void stop() {
         producer.close();
+    }
+
+
+    public static void main(String[] args) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.startConnect();
+        for (int i = 0; i < 100; i++) {
+            // 发送消息
+            sendMessage.sendMessage("hello " + i + " -- " + new Date());
+        }
+        sendMessage.stop();
     }
 
 }
