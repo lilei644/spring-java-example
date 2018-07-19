@@ -18,3 +18,4 @@
 * JavaKafkaExample			—— Java版kafka消息队列示例
 * JavaActiveMQExample		—— Java版activemq消息队列示例
 * SpringActiveMQExample		—— 利用activemq消息队列示例
+* JavaMqttExample			—— Java版mqtt发布消息与订阅示例
