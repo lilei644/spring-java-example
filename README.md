@@ -8,6 +8,7 @@
 * SpringRabbitMQExample 	—— 利用RabbitMQ实现消息队列
 * JavaRabbitmqExample		—— Java版rabbitmq消息队列示例
 * RedisMessageExample		—— 利用Redis实现消息队列和分布式锁
+* SpringMybatisExample		—— MyBatis实现CRUD
 * ReadWriteExample			—— MyBatis读写分离支持事务
 * MapeerPageHelper			—— MyBatis通用Mapper,分页插件
 * WebSocketExample			—— WebSocekt通讯
