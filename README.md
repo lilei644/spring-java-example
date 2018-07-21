@@ -26,3 +26,5 @@
 	* eureka-consumer				—— eureka服务消费者
 	* eureka-consumer-ribbon		—— eureka服务消费者，利用ribbon做负载均衡
 	* eureka-consumer-feign			—— eureka服务消费者,利用feign做负载均衡和接口服务的调用
+	* config-server-git				—— 利用git做配置中心的同步服务端
+	* config-client					—— 配置中心的客户端
