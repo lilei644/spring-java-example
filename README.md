@@ -28,3 +28,6 @@
 	* eureka-consumer-feign			—— eureka服务消费者,利用feign做负载均衡和接口服务的调用
 	* config-server-git				—— 利用git做配置中心的同步服务端
 	* config-client					—— 配置中心的客户端
+	* eureka-consumer-ribbon-hystrix		—— hystrix做服务容错保护
+	* hystrix-dashboard				—— hystrix的监控中心
+	* turbine							—— 利用turbine对服务集群进行监控
