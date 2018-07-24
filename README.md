@@ -31,3 +31,5 @@
 	* eureka-consumer-ribbon-hystrix		—— hystrix做服务容错保护
 	* hystrix-dashboard				—— hystrix的监控中心
 	* turbine							—— 利用turbine对服务集群进行监控
+	* turbine-amqp					—— 利用turbine对服务集群进行监控并用rabbitmq发送消息
+	* api-gateway						—— zuul网关和过滤器
