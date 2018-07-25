@@ -33,3 +33,4 @@
 	* turbine							—— 利用turbine对服务集群进行监控
 	* turbine-amqp					—— 利用turbine对服务集群进行监控并用rabbitmq发送消息
 	* api-gateway						—— zuul网关和过滤器
+	* zipkin-server					—— zipkin-server服务链路监控
