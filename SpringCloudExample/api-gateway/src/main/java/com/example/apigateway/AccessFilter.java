@@ -44,6 +44,9 @@ public class AccessFilter extends ZuulFilter {
             ctx.setResponseStatusCode(401);
             return null;
         }
+        if (accessToken != null) {
+            throw new RuntimeException("Exist some errors...");
+        }
         log.info("access token ok");
         return null;
     }

@@ -19,4 +19,9 @@ public class ApiGatewayApplication {
     public AccessFilter accessFilter() {
         return new AccessFilter();
     }
+
+    @Bean
+    public ErrorFilter errorFilter() {
+        return new ErrorFilter();
+    }
 }
