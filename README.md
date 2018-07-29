@@ -19,6 +19,7 @@
 * JavaActiveMQExample		—— Java版activemq消息队列示例
 * SpringActiveMQExample		—— 利用activemq消息队列示例
 * JavaMqttExample			—— Java版mqtt发布消息与订阅示例
+* SpringDockerExample		—— 利用docker构建和运行微服务
 
 * SpringCloudExample
 	* eureka-server					—— eureka服务注册中心
