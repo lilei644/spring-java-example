@@ -3,9 +3,9 @@
 <mapper namespace="com.example.mybatis.mapper.UserDao">
 
     <resultMap id="BaseResultMap" type="com.example.mybatis.entity.User">
-        <id column="id" property="id" jdbcType="INTEGER" />
-        <result column="name" property="name" jdbcType="VARCHAR" />
-        <result column="age" property="age" jdbcType="INTEGER" />
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -13,16 +13,21 @@
     </sql>
 
     <select id="queryAllUser" resultMap="BaseResultMap">
-      select <include refid="Base_Column_List"/> from user
+        select
+        <include refid="Base_Column_List"/>
+        from user
     </select>
 
 
     <select id="queryAllUserCount" resultType="java.lang.Integer">
-      select count(*) from user
+        select count(*)
+        from user
     </select>
 
     <select id="queryUserById" resultMap="BaseResultMap">
-        select <include refid="Base_Column_List"/> from user where id = #{id}
+        select
+        <include refid="Base_Column_List"/>
+        from user where id = #{id}
     </select>
 
 

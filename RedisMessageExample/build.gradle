@@ -1,19 +1,19 @@
 buildscript {
-	ext {
-		springBootVersion = '1.5.4.RELEASE'
-	}
-	repositories {
-		maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '1.5.4.RELEASE'
+    }
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 allprojects {
-	repositories {
-		maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
-	}
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    }
 }
 
 apply plugin: 'java'
@@ -24,12 +24,12 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-data-redis')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.springframework.boot:spring-boot-starter-data-redis')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }

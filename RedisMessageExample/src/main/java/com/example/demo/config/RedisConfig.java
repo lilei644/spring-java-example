@@ -8,6 +8,7 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.listener.PatternTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.listener.adapter.MessageListenerAdapter;
+
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -21,6 +22,7 @@ public class RedisConfig {
      */
     @Value("${redis.channel.message}")
     private String channel;
+
     /**
      * 同步计数器
      * 用于保持redis消息监听器状态，主线程等待子线程退出
@@ -30,6 +32,7 @@ public class RedisConfig {
     CountDownLatch latch() {
         return new CountDownLatch(1);
     }
+
     /**
      * 操作模板
      * connectionFactory 为spring-data-redis 自动注入
@@ -38,6 +41,7 @@ public class RedisConfig {
     StringRedisTemplate template(RedisConnectionFactory connectionFactory) {
         return new StringRedisTemplate(connectionFactory);
     }
+
     /**
      * redis消息接收/消费类
      */
@@ -45,6 +49,7 @@ public class RedisConfig {
     RedisMessageReceiver receiver(CountDownLatch latch) {
         return new RedisMessageReceiver(latch);
     }
+
     /**
      * 消息消费适配器
      */

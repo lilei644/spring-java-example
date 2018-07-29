@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
 
-
     <distributionManagement>
         <repository>
             <id>nexus-releases</id>
@@ -68,5 +67,5 @@
         </dependency>
 
     </dependencies>
-    
+
 </project>

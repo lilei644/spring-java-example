@@ -24,6 +24,7 @@ public class RedisMessageReceiver {
     public RedisMessageReceiver(CountDownLatch latch) {
         this.latch = latch;
     }
+
     /**
      * 消息消费方法
      */

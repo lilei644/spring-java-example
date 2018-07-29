@@ -33,12 +33,12 @@ public class Sender {
         rabbitTemplate.convertAndSend(RabbitmqApplication.EXCHANGE_NAME, "blacks", context + "  black", new CorrelationData(uuid));
 
 
-    //    Thread.sleep(2000);
+        //    Thread.sleep(2000);
         uuid = UUID.randomUUID().toString();
         System.out.println("send message id : " + uuid);
         rabbitTemplate.convertAndSend(RabbitmqApplication.EXCHANGE_NAME, "orange", context + "  orange", new CorrelationData(uuid));
 
-    //    Thread.sleep(2000);
+        //    Thread.sleep(2000);
         uuid = UUID.randomUUID().toString();
         System.out.println("send message id : " + uuid);
         rabbitTemplate.convertAndSend(RabbitmqApplication.EXCHANGE_NAME, "black", context + "  black", new CorrelationData(uuid));

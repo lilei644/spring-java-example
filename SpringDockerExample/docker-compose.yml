@@ -1,0 +1,14 @@
+version: '2.1'
+services:
+  docker-exmple:
+    build: .
+    image: docker-example/docker-example
+    restart: always
+    ports:
+          - 8080:8080
+    logging:
+          options:
+            max-size: "10m"
+            max-file: "10"
+
+# docker-compose up --build -d 执行自动生成镜像和启动

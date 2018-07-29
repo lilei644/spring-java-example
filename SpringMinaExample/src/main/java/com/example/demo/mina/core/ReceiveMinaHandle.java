@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * Created by Scott on 16/8/24.
  */
 @Component
-public class ReceiveMinaHandle extends IoHandlerAdapter{
+public class ReceiveMinaHandle extends IoHandlerAdapter {
     private static Logger LOGGER = LoggerFactory.getLogger(ReceiveMinaHandle.class);
 
     @Override
@@ -36,7 +36,7 @@ public class ReceiveMinaHandle extends IoHandlerAdapter{
     public void sessionIdle(IoSession session, IdleStatus status)
             throws Exception {
         // TODO Auto-generated method stub
-        LOGGER.info(String.format("session [%s] ,status [%s]",session.getId(), status.toString()));
+        LOGGER.info(String.format("session [%s] ,status [%s]", session.getId(), status.toString()));
     }
 
     @Override
@@ -46,12 +46,12 @@ public class ReceiveMinaHandle extends IoHandlerAdapter{
 
     @Override
     public void sessionCreated(IoSession session) throws Exception {
-        LOGGER.info("session is create"+session.getId());
+        LOGGER.info("session is create" + session.getId());
     }
 
     @Override
     public void sessionOpened(IoSession session) throws Exception {
-        LOGGER.info("session is opened"+session.getId());
+        LOGGER.info("session is opened" + session.getId());
     }
 
 

@@ -53,7 +53,7 @@ public class MessageSender {
     }
 
 
-    private void sendMessage(Session session, TopicPublisher publisher) throws Exception  {
+    private void sendMessage(Session session, TopicPublisher publisher) throws Exception {
         for (int i = 0; i < 10; i++) {
             String message = "发送消息第" + (i + 1) + "条";
             MapMessage map = session.createMapMessage();

@@ -12,33 +12,33 @@ import org.springframework.web.bind.annotation.RestController;
 @ServletComponentScan
 public class DemoApplication {
 
-	@Autowired
-	private MainService mainService;
+    @Autowired
+    private MainService mainService;
 
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
 
 
-	// 测试读
-	@GetMapping("/Main")
-	public String TestRead() {
-		return mainService.testRead();
-	}
+    // 测试读
+    @GetMapping("/Main")
+    public String TestRead() {
+        return mainService.testRead();
+    }
 
 
-	// 测试写
-	@GetMapping("/Main2")
-	public String TestWrite() {
-		return mainService.testWrite();
-	}
+    // 测试写
+    @GetMapping("/Main2")
+    public String TestWrite() {
+        return mainService.testWrite();
+    }
 
 
-	// 测试事务
-	@GetMapping("/Main3")
-	public Object TestTransactional() {
-		return mainService.testTransactional();
-	}
+    // 测试事务
+    @GetMapping("/Main3")
+    public Object TestTransactional() {
+        return mainService.testTransactional();
+    }
 
 }

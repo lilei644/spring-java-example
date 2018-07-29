@@ -44,12 +44,12 @@ public class ErrorFilter extends ZuulFilter {
             PrintWriter writer = null;
             try {
                 writer = response.getWriter();
-                writer.print("{code:"+ exception.nStatusCode +",message:路由异常-\""+ exception.getMessage() +"\"}");
+                writer.print("{code:" + exception.nStatusCode + ",message:路由异常-\"" + exception.getMessage() + "\"}");
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
                 log.error("进入系统异常拦截>>>>>>>>>");
-                if(writer!=null){
+                if (writer != null) {
                     writer.close();
                 }
             }
@@ -64,11 +64,11 @@ public class ErrorFilter extends ZuulFilter {
 
     ZuulException findZuulException(Throwable throwable) {
         if (ZuulRuntimeException.class.isInstance(throwable.getCause())) {
-            return (ZuulException)throwable.getCause().getCause();
+            return (ZuulException) throwable.getCause().getCause();
         } else if (ZuulException.class.isInstance(throwable.getCause())) {
-            return (ZuulException)throwable.getCause();
+            return (ZuulException) throwable.getCause();
         } else {
-            return ZuulException.class.isInstance(throwable) ? (ZuulException)throwable : new ZuulException(throwable, 500, (String)null);
+            return ZuulException.class.isInstance(throwable) ? (ZuulException) throwable : new ZuulException(throwable, 500, (String) null);
         }
     }
 

@@ -16,39 +16,39 @@ import java.util.Date;
 @RestController
 public class KafkaApplication {
 
-	@Autowired
-	private KafkaTemplate<String, String> kafkaTemplate;
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
 
-	public static void main(String[] args) {
-		SpringApplication.run(KafkaApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(KafkaApplication.class, args);
+    }
 
-	@GetMapping("/test")
-	public String testSendMessage() {
-		ListenableFuture future = kafkaTemplate.send("TestTopic", "Hello world : " + new Date());
-		future.addCallback(new ListenableFutureCallback<String>() {
-			@Override
-			public void onFailure(Throwable throwable) {
-				System.out.println("send message fail");
-			}
+    @GetMapping("/test")
+    public String testSendMessage() {
+        ListenableFuture future = kafkaTemplate.send("TestTopic", "Hello world : " + new Date());
+        future.addCallback(new ListenableFutureCallback<String>() {
+            @Override
+            public void onFailure(Throwable throwable) {
+                System.out.println("send message fail");
+            }
 
-			@Override
-			public void onSuccess(String message) {
-				System.out.println("send message success");
-			}
-		});
-		return "hello world";
-	}
+            @Override
+            public void onSuccess(String message) {
+                System.out.println("send message success");
+            }
+        });
+        return "hello world";
+    }
 
 
-	@KafkaListener(topics = {"TestTopic"})
-	public void receive(String content){
-		System.err.println(">>>>>>Receive : " + content);
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
+    @KafkaListener(topics = {"TestTopic"})
+    public void receive(String content) {
+        System.err.println(">>>>>>Receive : " + content);
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

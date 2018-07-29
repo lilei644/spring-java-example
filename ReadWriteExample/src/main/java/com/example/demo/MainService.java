@@ -38,7 +38,7 @@ public class MainService {
 
         mainMapper.updateUser("lss");
         System.out.print(mainMapper.getUser() + "\n");
-        System.out.print(1/0);
+        System.out.print(1 / 0);
         return "hello Transactional";
     }
 

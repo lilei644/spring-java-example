@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * service的切面
  */
 @Aspect
-@EnableAspectJAutoProxy(exposeProxy=true,proxyTargetClass=true)
+@EnableAspectJAutoProxy(exposeProxy = true, proxyTargetClass = true)
 @Component
 public class DataSourceAopInService implements PriorityOrdered {
 

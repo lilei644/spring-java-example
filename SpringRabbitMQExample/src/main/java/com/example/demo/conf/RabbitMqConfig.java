@@ -41,7 +41,7 @@ public class RabbitMqConfig {
     public ConnectionFactory connectionFactory() {
 
         CachingConnectionFactory connectionFactory = new CachingConnectionFactory();
-        connectionFactory.setAddresses(addresses+":"+port);
+        connectionFactory.setAddresses(addresses + ":" + port);
         connectionFactory.setUsername(username);
         connectionFactory.setPassword(password);
         /** 如果要进行消息回调，则这里必须要设置为true */

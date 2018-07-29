@@ -11,20 +11,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RabbitmqApplication {
 
-	public static final String MESSAGE_QUENE = "TestQueue2";
-	public final static String EXCHANGE_NAME = "TestExchange";
+    public static final String MESSAGE_QUENE = "TestQueue2";
+    public final static String EXCHANGE_NAME = "TestExchange";
 
-	@Autowired
-	private Sender sender;
+    @Autowired
+    private Sender sender;
 
-	public static void main(String[] args) {
-		SpringApplication.run(RabbitmqApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(RabbitmqApplication.class, args);
+    }
 
 
-	@GetMapping("/Main")
-	public String main() throws InterruptedException  {
-		sender.send();
-		return "hello world";
-	}
+    @GetMapping("/Main")
+    public String main() throws InterruptedException {
+        sender.send();
+        return "hello world";
+    }
 }

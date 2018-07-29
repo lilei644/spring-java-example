@@ -13,6 +13,7 @@ public class EurekaConsumerRibbonApplication {
 
     /**
      * 定义负载均衡器
+     *
      * @return
      */
     @Bean

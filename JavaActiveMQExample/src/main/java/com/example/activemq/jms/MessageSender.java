@@ -52,7 +52,7 @@ public class MessageSender {
     }
 
 
-    private void sendMessage(Session session, MessageProducer producer) throws Exception  {
+    private void sendMessage(Session session, MessageProducer producer) throws Exception {
         for (int i = 0; i < 10; i++) {
             String message = "发送消息第" + (i + 1) + "条";
             System.out.println(message);

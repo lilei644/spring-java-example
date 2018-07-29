@@ -38,7 +38,7 @@ public class DataSourceContextHolder {
         return local.get();
     }
 
-    public static void clear(){
+    public static void clear() {
         local.remove();
     }
 }

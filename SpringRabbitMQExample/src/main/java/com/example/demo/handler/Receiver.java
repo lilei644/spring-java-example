@@ -16,7 +16,6 @@ import org.springframework.stereotype.Component;
 public class Receiver {
 
 
-
     @Bean
     Queue queue() {
         return new Queue(RabbitmqApplication.MESSAGE_QUENE);
@@ -56,9 +55,9 @@ public class Receiver {
     }
 
 
-
     /**
      * 接收消息的监听
+     *
      * @param message 收到的消息
      */
     @RabbitHandler

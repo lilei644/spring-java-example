@@ -50,7 +50,7 @@ public class MessageReceiver {
     }
 
 
-    private void receiveMessage(TopicSubscriber subscriber) throws Exception  {
+    private void receiveMessage(TopicSubscriber subscriber) throws Exception {
         subscriber.setMessageListener(new MessageListener() {
             public void onMessage(Message message) {
                 MapMessage map = (MapMessage) message;

@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Configuration
 @AutoConfigureAfter(DataSourceConfiguration.class)
-@MapperScan(basePackages="com.example.demo")
+@MapperScan(basePackages = "com.example.demo")
 public class MybatisConfiguration {
 
     private static Logger log = LoggerFactory.getLogger(MybatisConfiguration.class);
@@ -45,7 +45,7 @@ public class MybatisConfiguration {
     private DataSource readDataSource01;
 
 
-    @Bean(name="sqlSessionFactory")
+    @Bean(name = "sqlSessionFactory")
     public SqlSessionFactory sqlSessionFactorys() throws Exception {
         log.info("--------------------  sqlSessionFactory init ---------------------");
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
@@ -57,23 +57,25 @@ public class MybatisConfiguration {
 
     /**
      * 把所有数据库都放在路由中
+     *
      * @return
      */
-    @Bean(name="roundRobinDataSouceProxy")
+    @Bean(name = "roundRobinDataSouceProxy")
     public AbstractRoutingDataSource roundRobinDataSouceProxy() {
 
         Map<Object, Object> targetDataSources = new HashMap<Object, Object>();
         //把所有数据库都放在targetDataSources中,注意key值要和determineCurrentLookupKey()中代码写的一至，
         //否则切换数据源时找不到正确的数据源
         targetDataSources.put(DataSourceType.write.getType(), writeDataSource);
-        targetDataSources.put(DataSourceType.read.getType()+"1", readDataSource01);
+        targetDataSources.put(DataSourceType.read.getType() + "1", readDataSource01);
 
         final int readSize = Integer.parseInt(readDataSourceSize);
         //     MyAbstractRoutingDataSource proxy = new MyAbstractRoutingDataSource(readSize);
 
         //路由类，寻找对应的数据源
-        AbstractRoutingDataSource proxy = new AbstractRoutingDataSource(){
+        AbstractRoutingDataSource proxy = new AbstractRoutingDataSource() {
             private AtomicInteger count = new AtomicInteger(0);
+
             /**
              * 这是AbstractRoutingDataSource类中的一个抽象方法，
              * 而它的返回值是你所要用的数据源dataSource的key值，有了这个key值，
@@ -83,13 +85,13 @@ public class MybatisConfiguration {
             protected Object determineCurrentLookupKey() {
                 String typeKey = DataSourceContextHolder.getReadOrWrite();
 
-                if(typeKey == null){
+                if (typeKey == null) {
                     //	System.err.println("使用数据库write.............");
                     //    return DataSourceType.write.getType();
                     throw new NullPointerException("数据库路由时，决定使用哪个数据库源类型不能为空...");
                 }
 
-                if (typeKey.equals(DataSourceType.write.getType())){
+                if (typeKey.equals(DataSourceType.write.getType())) {
                     System.err.println("使用数据库write.............");
                     return DataSourceType.write.getType();
                 }
@@ -97,8 +99,8 @@ public class MybatisConfiguration {
                 //读库， 简单负载均衡
                 int number = count.getAndAdd(1);
                 int lookupKey = number % readSize;
-                System.err.println("使用数据库read-"+(lookupKey+1));
-                return DataSourceType.read.getType()+(lookupKey+1);
+                System.err.println("使用数据库read-" + (lookupKey + 1));
+                return DataSourceType.read.getType() + (lookupKey + 1);
             }
         };
 

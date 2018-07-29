@@ -36,6 +36,7 @@ public class RedisService {
 //    public void save(String key, String value) {
 //        stringRedisTemplate.opsForValue().set(key, value);
 //    }
+
     /**
      * 从缓存中删除元素对象
      *
@@ -45,6 +46,7 @@ public class RedisService {
     public void delete(String key) {
         stringRedisTemplate.delete(key);
     }
+
     /**
      * 获得Key对应的值
      *
@@ -73,7 +75,8 @@ public class RedisService {
 
     /**
      * redis setnx 操作
-     * @param key key
+     *
+     * @param key   key
      * @param value value
      * @return 之前不存在key的话则为true
      */
@@ -84,8 +87,9 @@ public class RedisService {
 
     /**
      * 实现分布式锁时为保证原子性，直接使用命令赋值和设置超时时间
-     * @param key key
-     * @param value value
+     *
+     * @param key     key
+     * @param value   value
      * @param timeout 超时时间，毫秒
      * @return OK为成功，null表示已经存在
      */
@@ -103,7 +107,8 @@ public class RedisService {
 
     /**
      * 实现分布式锁解锁时利用lua脚本保证删除时的原子性
-     * @param key key
+     *
+     * @param key   key
      * @param value value
      * @return 1成功，0 失败
      */
@@ -124,7 +129,7 @@ public class RedisService {
 
                 // 单机模式
                 else if (nativeConnection instanceof Jedis) {
-                    return (Long) ((Jedis) nativeConnection).eval(UNLOCK_LUA, 1,  key, value);
+                    return (Long) ((Jedis) nativeConnection).eval(UNLOCK_LUA, 1, key, value);
                 }
                 return 0L;
             }

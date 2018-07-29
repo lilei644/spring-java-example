@@ -50,7 +50,7 @@ public class MessageReceiver {
     }
 
 
-    private void receiveMessage(QueueReceiver receiver) throws Exception  {
+    private void receiveMessage(QueueReceiver receiver) throws Exception {
         receiver.setMessageListener(new MessageListener() {
             public void onMessage(Message message) {
                 MapMessage map = (MapMessage) message;

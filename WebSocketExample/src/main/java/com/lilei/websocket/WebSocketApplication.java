@@ -13,24 +13,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/")
 public class WebSocketApplication {
 
-	@Autowired
-	private MyWebSocket myWebSocket;
+    @Autowired
+    private MyWebSocket myWebSocket;
 
-	public static void main(String[] args) {
-		SpringApplication.run(WebSocketApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(WebSocketApplication.class, args);
+    }
 
 
-	/**
-	 * 测试发送
-	 * @param id 发送到哪个用户
-	 * @param message 发送的数据
-	 * @return yes
-	 */
-	@GetMapping("{id}/{message}")
-	public String test(@PathVariable String id, @PathVariable String message) {
-		myWebSocket.sendMessage(message, id);
-		return "yes";
-	}
+    /**
+     * 测试发送
+     *
+     * @param id      发送到哪个用户
+     * @param message 发送的数据
+     * @return yes
+     */
+    @GetMapping("{id}/{message}")
+    public String test(@PathVariable String id, @PathVariable String message) {
+        myWebSocket.sendMessage(message, id);
+        return "yes";
+    }
 
 }

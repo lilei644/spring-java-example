@@ -43,7 +43,7 @@ public class MessageReceiver {
 
             client.connect(options);
             //订阅消息
-            int[] Qos  = {1};
+            int[] Qos = {1};
             String[] topic1 = {TOPIC};
             client.subscribe(topic1, Qos);
 

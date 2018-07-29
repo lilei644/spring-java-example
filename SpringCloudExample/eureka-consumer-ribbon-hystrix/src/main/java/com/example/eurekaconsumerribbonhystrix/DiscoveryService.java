@@ -19,6 +19,7 @@ public class DiscoveryService {
 
     /**
      * 加载超时时执行的方法
+     *
      * @return
      */
     private String fallbackMethod() {

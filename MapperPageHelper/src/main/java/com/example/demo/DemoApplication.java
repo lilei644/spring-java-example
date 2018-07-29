@@ -14,19 +14,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoApplication {
 
-	@Autowired
-	private UserMapper userMapper;
+    @Autowired
+    private UserMapper userMapper;
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
 
 
-	@GetMapping("test")
-	public Object getUser() {
-		PageHelper.startPage(2,2);
-		return new PageInfo<User>(userMapper.selectAll());
-	}
+    @GetMapping("test")
+    public Object getUser() {
+        PageHelper.startPage(2, 2);
+        return new PageInfo<User>(userMapper.selectAll());
+    }
 
 
 }

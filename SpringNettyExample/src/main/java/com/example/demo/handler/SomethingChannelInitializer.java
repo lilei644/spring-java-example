@@ -31,7 +31,7 @@ public class SomethingChannelInitializer extends ChannelInitializer<SocketChanne
         ChannelPipeline pipeline = socketChannel.pipeline();
 
         // Add the text line codec combination first,
-        pipeline.addLast(new DelimiterBasedFrameDecoder(1024*1024, Delimiters.lineDelimiter()));
+        pipeline.addLast(new DelimiterBasedFrameDecoder(1024 * 1024, Delimiters.lineDelimiter()));
         // the encoder and decoder are static as these are sharable
         pipeline.addLast(DECODER);
         pipeline.addLast(ENCODER);

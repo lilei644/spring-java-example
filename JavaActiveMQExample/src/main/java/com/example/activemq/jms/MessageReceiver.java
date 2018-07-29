@@ -50,7 +50,7 @@ public class MessageReceiver {
     }
 
 
-    private void receiveMessage(MessageConsumer consumer) throws Exception  {
+    private void receiveMessage(MessageConsumer consumer) throws Exception {
         while (true) {
             // 接收数据的时间（等待） 100 ms
             Message message = consumer.receive(1000 * 100);

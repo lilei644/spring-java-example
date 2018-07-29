@@ -44,7 +44,7 @@ public class MessageSender {
         }
     }
 
-    public void publish(MqttTopic topic , MqttMessage message) throws MqttPersistenceException,
+    public void publish(MqttTopic topic, MqttMessage message) throws MqttPersistenceException,
             MqttException {
         MqttDeliveryToken token = topic.publish(message);
         token.waitForCompletion();
@@ -61,7 +61,7 @@ public class MessageSender {
         for (int i = 0; i < 10; i++) {
             String message = "发送消息：" + i;
             sender.message.setPayload(message.getBytes());
-            sender.publish(sender.topic , sender.message);
+            sender.publish(sender.topic, sender.message);
         }
 
 

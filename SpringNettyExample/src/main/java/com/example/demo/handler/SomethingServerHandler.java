@@ -43,12 +43,12 @@ public class SomethingServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 
-    //    channelRepository.get(ip).writeAndFlush("This is a Test Connect\n");
+        //    channelRepository.get(ip).writeAndFlush("This is a Test Connect\n");
 
 
         String stringMessage = (String) msg;
 
-    //    ctx.channel().writeAndFlush(stringMessage); // \r\n
+        //    ctx.channel().writeAndFlush(stringMessage); // \r\n
         WorkThread.startWork(ctx, stringMessage);
     }
 
@@ -59,7 +59,7 @@ public class SomethingServerHandler extends ChannelInboundHandlerAdapter {
     }
 
     @Override
-    public void channelInactive(ChannelHandlerContext ctx){
+    public void channelInactive(ChannelHandlerContext ctx) {
         Assert.notNull(this.channelRepository, "[Assertion failed] - ChannelRepository is required; it must not be null");
         Assert.notNull(ctx);
 

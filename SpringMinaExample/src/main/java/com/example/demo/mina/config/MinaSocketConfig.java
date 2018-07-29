@@ -31,7 +31,7 @@ public class MinaSocketConfig {
      */
     private int port = 9002;
 
-    private Map<Class<?>,Class<? extends PropertyEditor>> customEditors = new HashMap<>();
+    private Map<Class<?>, Class<? extends PropertyEditor>> customEditors = new HashMap<>();
 
 //    @Bean
 //    public CustomEditorConfigurer customEditorConfigurer(){
@@ -52,7 +52,6 @@ public class MinaSocketConfig {
         nioSocketAcceptor.setHandler(receiveMinaHandle);
         return nioSocketAcceptor;
     }
-
 
 
     @Bean

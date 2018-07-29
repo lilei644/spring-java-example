@@ -41,13 +41,13 @@ public class BossMinaHandle extends IoHandlerAdapter {
 
     @Override
     public void sessionCreated(IoSession session) throws Exception {
-        LOGGER.info("session is create"+session.getId());
+        LOGGER.info("session is create" + session.getId());
         super.sessionCreated(session);
     }
 
     @Override
     public void sessionOpened(IoSession session) throws Exception {
-        LOGGER.info("session is opened"+session.getId());
+        LOGGER.info("session is opened" + session.getId());
         super.sessionOpened(session);
     }
 }

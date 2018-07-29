@@ -67,7 +67,7 @@ public class ZookeeperLock implements Runnable {
         // 新建线程
         Thread[] threads = new Thread[10];
         for (int i = 0; i < 10; i++) {
-            threads[i]=  new Thread(new ZookeeperLock());
+            threads[i] = new Thread(new ZookeeperLock());
             threads[i].start();
         }
 

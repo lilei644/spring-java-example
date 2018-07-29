@@ -25,6 +25,7 @@ public class DataSourceConfiguration {
 
     /**
      * 写库 数据源配置
+     *
      * @return
      */
     @Bean(name = "writeDataSource")
@@ -37,6 +38,7 @@ public class DataSourceConfiguration {
 
     /**
      * 有多少个从库就要配置多少个
+     *
      * @return
      */
     @Bean(name = "readDataSource")

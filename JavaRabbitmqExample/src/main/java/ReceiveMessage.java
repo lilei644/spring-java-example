@@ -10,7 +10,7 @@ public class ReceiveMessage {
     private Connection connection;
     private Channel channel;
 
-    public ReceiveMessage() throws Exception  {
+    public ReceiveMessage() throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
         factory.setUsername(RabbitmqExample.USER_NAME);
@@ -39,7 +39,7 @@ public class ReceiveMessage {
 
         // 绑定队列到路由上
         channel.queueBind(RabbitmqExample.QUEUE_NAME, RabbitmqExample.EXCHANGE_NAME, "black.*");
-    //    channel.queueBind(RabbitmqExample.QUEUE_NAME, RabbitmqExample.EXCHANGE_NAME, "orange.*");
+        //    channel.queueBind(RabbitmqExample.QUEUE_NAME, RabbitmqExample.EXCHANGE_NAME, "orange.*");
 
         // 消费者每次只接受一条消息，回复成功了之后再发送第二条
         channel.basicQos(1);

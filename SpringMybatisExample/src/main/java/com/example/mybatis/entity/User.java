@@ -3,11 +3,12 @@ package com.example.mybatis.entity;
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.activerecord.Model;
+
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author lei
@@ -55,9 +56,9 @@ public class User extends Model<User> {
     @Override
     public String toString() {
         return "User{" +
-        "id=" + id +
-        ", name=" + name +
-        ", age=" + age +
-        "}";
+                "id=" + id +
+                ", name=" + name +
+                ", age=" + age +
+                "}";
     }
 }
