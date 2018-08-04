@@ -13,6 +13,7 @@
 * MapeerPageHelper			—— MyBatis通用Mapper,分页插件
 * WebSocketExample			—— WebSocekt通讯
 * ZookeeperExample			—— Zookeeper使用和分布式锁的实现
+* SpringCacheExample		—— 利用redis实现数据自动缓存
 * DubboExample				—— 利用Dubbo实现RPC服务调用
 * SpringKafkaExample		—— 利用kafka实现消息队列
 * JavaKafkaExample			—— Java版kafka消息队列示例
