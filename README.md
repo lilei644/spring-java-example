@@ -19,6 +19,7 @@
 * JavaActiveMQExample		—— Java版activemq消息队列示例
 * SpringActiveMQExample		—— 利用activemq消息队列示例
 * JavaMqttExample			—— Java版mqtt发布消息与订阅示例
+* SpringAuthExample			—— 利用过滤器和拦截器进行身份验证
 * SpringDockerExample		—— 利用docker构建和运行微服务
 * SpringLcnExample			—— 利用lcn实现分布式事务
 
