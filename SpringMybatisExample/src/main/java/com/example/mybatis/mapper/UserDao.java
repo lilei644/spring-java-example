@@ -21,7 +21,7 @@ public interface UserDao extends BaseMapper<User> {
     List<User> queryAllUser();
 
     int queryAllUserCount();
-
+    
     User queryUserById(int id);
 
 }
