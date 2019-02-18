@@ -38,3 +38,4 @@
 	* turbine-amqp					—— 利用turbine对服务集群进行监控并用rabbitmq发送消息
 	* api-gateway						—— zuul网关和过滤器
 	* zipkin-server					—— zipkin-server服务链路监控
+* MySpringTransactional 		—— 手写实现Spring的事务注解功能
