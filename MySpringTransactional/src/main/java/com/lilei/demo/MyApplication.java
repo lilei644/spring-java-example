@@ -47,7 +47,7 @@ public class MyApplication {
 
     /**
      * 初始化扫包注入
-     * 由于此处的终点不是IOC，所以扫包注入的过程在外部直接调用初始化
+     * 由于此处的重点不是IOC，所以扫包注入的过程在外部直接调用初始化
      */
     private static void initIOC() {
 
