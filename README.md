@@ -1,5 +1,5 @@
-# spring-boot-example
-记录开发过程中利用spring boot实现的功能示例
+# spring-java-example
+记录开发以及学习过程中Spring、Java相关的示例
 
 <hr></hr>
 
