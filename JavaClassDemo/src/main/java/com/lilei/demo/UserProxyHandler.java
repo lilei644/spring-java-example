@@ -30,8 +30,8 @@ public class UserProxyHandler implements MethodInterceptor {
 
     public static void main(String[] args) {
         UserProxyHandler proxyHandler = new UserProxyHandler();
-        User user1 = proxyHandler.getInstance(User.class);
-        user1.show("ss", 20);
+//        User user1 = proxyHandler.getInstance(User.class);
+//        user1.show("ss", 20);
     }
 
 }
